@@ -1,0 +1,79 @@
+<!--
+     <!DOCTYPE html>
+     <!--[if lt IE 7]>
+<html lang="en" ng-app="offsite" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="offsite" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="offsite" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="{{language}}" dir="{{language =='ar'? 'rtl' : 'ltr'}}" ng-app="offsite" class="no-js"> <!--<![endif]-->
+<head>
+  <title data-ng-bind-html="pageTitle"></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; img-src 'self' * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+
+  <link rel="stylesheet" href="assets/stylesheets/app.css">
+</head>
+
+<body class="layout-transparent {{pageClasses}}">
+<md-content>
+  <md-toolbar scroll style="background-color: rgba(63, 81, 181, 0)">
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
+        <md-icon md-svg-icon="assets/images/icons/menu.svg"></md-icon>
+      </md-button>
+      <h2>
+        <span>Welcome Anonymous</span>
+      </h2>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="assets/images/icons/more_vert.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+</md-content>
+<md-sidenav scroll class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="background-color: rgba(63, 81, 181, 0)">
+  <md-content layout-padding style="background-color: rgb(239, 93, 48);">
+    <md-button ng-click="close()" class="md-primary" aria-label="back" style="color: white;">
+      <!--<md-icon md-svg-icon="../img/icons/back.svg"></md-icon>-->
+      <!--TODO-->
+      back
+    </md-button>
+  </md-content>
+</md-sidenav>
+<div ui-view></div>
+</body>
+
+<script src="../bower_components/fastclick/lib/fastclick.js"></script>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-ui-utils/ui-utils.min.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+
+
+<script type="text/javascript" src="../bower_components/angular-cookie/angular-cookie.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="../bower_components/ng-token-auth/dist/ng-token-auth.min.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="../bower_components/angular-translate/angular-translate.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+
+<script src="app.js"></script>
+
+<script src="components/users/users.module.js"></script>
+<script src="components/users/login.js"></script>
+
+<script src="services/user.service.js"></script>
+<script src="services/api.service.js"></script>
+
+</html>

@@ -1,0 +1,10 @@
+.layout-transparent {
+  background: url('../images/offsite.jpg') center / cover;
+}
+
+[scroll] {
+  position:fixed;
+  top:0;
+}
+
+
