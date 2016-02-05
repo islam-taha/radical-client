@@ -4,6 +4,7 @@
       <div class="md-toolbar-tools">
         <h2>Log In</h2>
         <span flex></span>
+<<<<<<< HEAD
       </div>
     </md-toolbar>
     <div layout="column" layout-padding ng-cloak>
@@ -11,6 +12,21 @@
         facebook
       </md-button>
       <md-button class="md-primary md-raised" style="background-color: #DD4B39;" ng-click="googleAuth2()">
+=======
+        <md-button class="md-icon-button" ng-click="cancel()">
+          x
+          <md-icon style="color: #777;"
+                   aria-label="accessibility"
+                   class="material-icons step"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <div layout="column" layout-padding ng-cloak>
+      <md-button class="md-primary md-raised" style="background-color: #3B5998;">
+        facebook
+      </md-button>
+      <md-button class="md-primary md-raised" style="background-color: #DD4B39;">
+>>>>>>> f40abf2... initial commit
         Google+
       </md-button>
     </div>
@@ -21,11 +37,19 @@
       <md-content class="autoScroll">
 
         <md-input-container class="md-icon-float md-block">
+<<<<<<< HEAD
           <input ng-model="user.email" type="email" placeholder="Email" ng-required="true">
         </md-input-container>
 
         <md-input-container class="md-icon-float md-block">
           <input ng-model="user.password" type="password" placeholder="Password" ng-required="true">
+=======
+          <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+        </md-input-container>
+
+        <md-input-container class="md-icon-float md-block">
+          <input ng-model="user.password" type="password" placeholder="password" ng-required="true">
+>>>>>>> f40abf2... initial commit
         </md-input-container>
 
       </md-content>

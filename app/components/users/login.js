@@ -26,6 +26,7 @@ angular.module('offsite.users')
       };
 
       $scope.showAdvanced();
+<<<<<<< HEAD
 
 
     }]);
@@ -45,4 +46,18 @@ function DialogController($scope, $mdDialog, $state, $auth) {
   $scope.facebookAuth = function () {
     $auth.authenticate('facebook');
   }
+=======
+    }]);
+
+function DialogController($scope, $mdDialog) {
+  $scope.hide = function () {
+    $mdDialog.hide();
+  };
+  $scope.cancel = function () {
+    $mdDialog.cancel();
+  };
+  $scope.answer = function (answer) {
+    $mdDialog.hide(answer);
+  };
+>>>>>>> f40abf2... initial commit
 }
