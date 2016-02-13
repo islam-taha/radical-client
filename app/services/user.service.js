@@ -17,7 +17,6 @@ angular.module('user', [])
         return deferred.promise;
       };
       //userService.language = 'en';
-
       var assign = function (object) {
         cached = object;
         //if (object.settings != undefined && object.settings.language != undefined) {

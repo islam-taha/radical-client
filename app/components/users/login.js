@@ -26,16 +26,23 @@ angular.module('offsite.users')
       };
 
       $scope.showAdvanced();
+
+
     }]);
 
-function DialogController($scope, $mdDialog) {
-  $scope.hide = function () {
-    $mdDialog.hide();
-  };
+function DialogController($scope, $mdDialog, $state, $auth) {
   $scope.cancel = function () {
     $mdDialog.cancel();
+    //$state.go('user')
   };
-  $scope.answer = function (answer) {
-    $mdDialog.hide(answer);
-  };
+
+  $scope.googleAuth2 = function () {
+    $auth.authenticate('google').then(function (response) {
+      console.log(response)
+    })
+  }
+
+  $scope.facebookAuth = function () {
+    $auth.authenticate('facebook');
+  }
 }
