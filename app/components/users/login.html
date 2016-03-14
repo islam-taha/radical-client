@@ -39,10 +39,10 @@
         <div layout="column">
           <md-menu>
             <md-button style="min-width: 100%;background: rgb(91, 104, 202);color:white;" aria-label="Open demo menu" class="md-raised" ng-click="$mdOpenMenu($event)">
-              {{chooseYourUniversity}}
+              {{chooseYourUniversity | limitTo:13}}{{truncateString()}}
             </md-button>
             <md-menu-content width="10">
-              <md-menu-item ng-repeat="item in universities">
+              <md-menu-item ng-repeat="item in universities track by $index">
                 <md-button ng-click="university($index)">
                   {{item}}
                 </md-button>

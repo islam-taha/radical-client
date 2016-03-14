@@ -64,18 +64,24 @@ function DialogController($scope, $mdDialog, $state, $api) {
     "German University in Cairo",
     "Heliopolis University",
     "HTI - Higher Technology Institution",
-    "International Academy for Engineering &amp; Media Science",
+    "International Academy for Engineering & Media Science",
     "Institute of Aviation",
     "Misr International University",
-    "Misr University for Science &amp; Technology - MUST",
+    "Misr University for Science & Technology - MUST",
     "Modern Academy",
-    "Modern Science &amp; Arts - MSA",
+    "Modern Science & Arts - MSA",
     "New Cairo Institute",
     "New Cairo",
     "Nile University",
     "Sadat Academy",
     "UFE - French University in Egypt"
   ];
+
+  $scope.truncateString = function() {
+    var trueName = $scope.chooseYourUniversity;
+    if (trueName.length > 15)
+      return '...';
+  }
 
   $scope.programs = [
     "volunteer abroad",
@@ -86,7 +92,7 @@ function DialogController($scope, $mdDialog, $state, $api) {
   var selected = $scope.program === $scope.programs[0] ? 1 : 2;
   $scope.selected_programmes.push(selected)
   
-  $scope.chooseYourUniversity = "choose your university";
+  $scope.chooseYourUniversity = "University";
   $scope.program = "program";
   $scope.load = 0;
 
