@@ -2,6 +2,9 @@
     "name": "radical-client",
     "description": "Radical",
     "version": "1.0.0",
+		"engines": {
+    	"npm": "2.1.x"
+  	},
     "homepage": "",
     "license": "Proprietary",
     "private": true,
