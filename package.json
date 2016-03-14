@@ -19,13 +19,9 @@
         "start": "http-server ./app/ -a 0.0.0.0 -p $PORT -c-1 --cors",
         "preupdate-webdriver": "npm install",
         "pretest": "nohup bash -c 'http-server ./app/ -a 0.0.0.0 -p 9000 -c-1 2>&1 &' && echo 'Started web server on port 9000'",
-        "test": "protractor protractor.conf.js",
         "posttest": "ps ax | grep 'http-server ./app/ -a 0.0.0.0 -p 9000 -c-1' | grep -v 'grep' | awk '{print $1}' | xargs kill -9 && echo 'Killed web server'",
-        "test-unit": "karma start karma.conf.js  --single-run",
-        "test-watch": "karma start karma.conf.js",
         "update-webdriver": "webdriver-manager update",
         "prepspec": "npm start",
-        "spec": "protractor protractor.conf.js",
         "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
     }
 }
