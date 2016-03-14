@@ -4,16 +4,16 @@ angular.module('api', ['ngResource'])
   .config(['$authProvider', function ($authProvider) {
     // TODO: construct the url in a cleaner way
     console.log('laksjdflksadjf')
+    window.backendUrl = "http://localhost:3000/"
     var confirmationUrl = window.location.origin + '/#/users/login';
     $authProvider.configure({
       apiUrl: window.backendUrl,
       storage: 'localStorage',
-      confirmationSuccessUrl: confirmationUrl
+      confirmationSuccessUrl: confirmationUrl,
       omniauthWindowType: 'sameWindow',
       authProviderPaths: {
-        github:   '/auth/github',
         facebook: '/auth/facebook',
-        google:   '/auth/google'
+        google:   '/auth/google_auth2'
       }
     });
   }])
@@ -49,14 +49,6 @@ angular.module('api', ['ngResource'])
       return $auth.apiUrl() + '/' + path;
     };
 
-    apiService.users = $resource(apiService.endpoint('users/:id'), {id: "@id"}, {
-      can: {
-        isArray: false,
-        method: 'GET',
-        url: apiService.endpoint('/users/can/'),
-        params: {verb: "@verb", object_id: "@object_id", object_type: "@object_type"}
-      }
-    });
-
+		apiService.auth = $resource(apiService.endpoint('auth/auth_expa'))
     return apiService;
   }]);

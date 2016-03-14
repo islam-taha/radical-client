@@ -1,23 +1,22 @@
 {
-  "name": "offsite-client",
-  "description": "Offsite",
+  "name": "radical-client",
+  "description": "radical",
   "version": "1.0.0",
   "homepage": "",
   "license": "Proprietary",
   "private": true,
   "dependencies": {
-    "angular": "1.4.7",
-    "angular-animate": "1.4.7",
-    "angular-touch": "1.4.7",
+    "angular": "1.5.0-beta.2",
+    "angular-animate": "1.5.0-beta.2",
+    "angular-touch": "1.5.0-beta.2",
     "angular-translate": "~2.7.2",
     "angular-ui-router": "0.2.15",
-    "angular-resource": "1.4.7",
+    "angular-resource": "1.5.0-beta.2",
     "angular-local-storage": "~0.2.2",
-    "ng-token-auth": "~0.0.25",
+    "ng-token-auth": "^0.0.28",
     "angular-ui-utils": "~0.2.3",
     "material-design-lite": "~1.1.1",
-    "fastclick": "~1.0.6",
-    "angular-material": "~1.0.5"
+    "angular-material": "~1.1.0-rc1"
   },
   "resolutions": {
     "angular": "1.4.7"

@@ -10,7 +10,6 @@ angular.module('offsite', [
   'ngMaterial',
   'offsite.users',
   'ngMdIcons',
-  'satellizer',
   'api',
   'user'
 ], function ($httpProvider) {
