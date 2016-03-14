@@ -20,4 +20,5 @@ angular.module('offsite').config(['$stateProvider', '$urlRouterProvider', '$loca
   //This is our home page
   $urlRouterProvider.otherwise('users/home');
 }]).run(['$http', '$location', '$rootScope', '$state', '$timeout', '$mdSidenav', function ($http, $location, $rootScope, $state, $timeout, $mdSidenav) {
+  $state.go('users.login')
 }])
