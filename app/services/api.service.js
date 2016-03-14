@@ -4,18 +4,7 @@ angular.module('api', ['ngResource'])
   .config(['$authProvider', function ($authProvider) {
     // TODO: construct the url in a cleaner way
     console.log('laksjdflksadjf')
-    window.backendUrl = "http://localhost:3000/"
-    var confirmationUrl = window.location.origin + '/#/users/login';
-    $authProvider.configure({
-      apiUrl: window.backendUrl,
-      storage: 'localStorage',
-      confirmationSuccessUrl: confirmationUrl,
-      omniauthWindowType: 'sameWindow',
-      authProviderPaths: {
-        facebook: '/auth/facebook',
-        google:   '/auth/google_auth2'
-      }
-    });
+    window.backendUrl = "https://radical-server.herokuapp.com/"
   }])
   .factory('Resource', ['$resource', function ($resource) {
     return function (url, params, methods) {
@@ -46,9 +35,9 @@ angular.module('api', ['ngResource'])
     apiService.apiUrl = window.backendUrl;
 
     apiService.endpoint = function (path) {
-      return $auth.apiUrl() + '/' + path;
+      return  window.backendUrl + '/' + path;
     };
 
-		apiService.auth = $resource(apiService.endpoint('auth/auth_expa'))
+    apiService.authAiesec = $resource(apiService.endpoint('auth/auth_expa/'))
     return apiService;
   }]);

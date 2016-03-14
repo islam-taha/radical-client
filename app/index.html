@@ -9,7 +9,7 @@
     <!--[if gt IE 8]><!-->
 <html lang="{{language}}" dir="{{language =='ar'? 'rtl' : 'ltr'}}" ng-app="offsite" class="no-js"> <!--<![endif]-->
 <head>
-  <title data-ng-bind-html="pageTitle"></title>
+  <title>Volunteer With Aiesec CU</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -21,32 +21,7 @@
 </head>
 
 <body class="layout-transparent {{pageClasses}}">
-<md-content>
-  <md-toolbar scroll style="background-color: rgba(63, 81, 181, 0)">
-    <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
-        <md-icon md-svg-icon="assets/images/icons/menu.svg"></md-icon>
-      </md-button>
-      <h2>
-        <span>Welcome </span>
-      </h2>
-      <span flex></span>
-      <md-button class="md-icon-button" aria-label="More">
-        <md-icon md-svg-icon="assets/images/icons/more_vert.svg"></md-icon>
-      </md-button>
-    </div>
-  </md-toolbar>
-</md-content>
-<md-sidenav scroll class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="background-color: rgba(63, 81, 181, 0)">
-  <md-content layout-padding style="background-color: rgb(239, 93, 48);">
-    <md-button ng-click="close()" class="md-icon-button" aria-label="back" style="color: white;">
-      <ng-md-icon icon="arrow_back" size="20" style="fill: white;"></ng-md-icon>
-      <!--TODO-->
-      <!--back-->
-    </md-button>
-  </md-content>
-</md-sidenav>
-<div ui-view></div>
+  <div ui-view></div>
 </body>
 
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
