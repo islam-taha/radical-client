@@ -20,6 +20,6 @@
         "preupdate-webdriver": "npm install",
         "pretest": "nohup bash -c 'http-server ./app/ -a 0.0.0.0 -p 9000 -c-1 2>&1 &' && echo 'Started web server on port 9000'",
         "posttest": "ps ax | grep 'http-server ./app/ -a 0.0.0.0 -p 9000 -c-1' | grep -v 'grep' | awk '{print $1}' | xargs kill -9 && echo 'Killed web server'",
-        "prepspec": "npm start",
+        "prepspec": "npm start"
     }
 }
