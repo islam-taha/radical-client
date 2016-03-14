@@ -11,7 +11,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "postinstall": "bower update",
+    "postinstall": "bower install",
     "start": "http-server ./app/ -p8000"
   }
 }

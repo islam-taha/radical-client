@@ -4,34 +4,33 @@
 3 info using node@v4.2.4
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info prestart radical-client@0.0.3
-6 info start radical-client@0.0.3
-7 verbose unsafe-perm in lifecycle true
-8 info radical-client@0.0.3 Failed to exec start script
-9 verbose stack Error: radical-client@0.0.3 start: `http-server ./app/ -p8000`
-9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at EventEmitter.emit (events.js:172:7)
-9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at ChildProcess.emit (events.js:172:7)
-9 verbose stack     at maybeClose (internal/child_process.js:818:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-10 verbose pkgid radical-client@0.0.3
-11 verbose cwd /Users/Tensor/radical-client
-12 error Darwin 15.4.0
-13 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-14 error node v4.2.4
-15 error npm  v2.14.12
-16 error code ELIFECYCLE
-17 error radical-client@0.0.3 start: `http-server ./app/ -p8000`
-17 error Exit status 1
-18 error Failed at the radical-client@0.0.3 start script 'http-server ./app/ -p8000'.
-18 error This is most likely a problem with the radical-client package,
-18 error not with npm itself.
-18 error Tell the author that this fails on your system:
-18 error     http-server ./app/ -p8000
-18 error You can get their info via:
-18 error     npm owner ls radical-client
-18 error There is likely additional logging output above.
-19 verbose exit [ 1, true ]
+6 verbose unsafe-perm in lifecycle true
+7 info radical-client@0.0.3 Failed to exec prestart script
+8 verbose stack Error: radical-client@0.0.3 prestart: `npm install`
+8 verbose stack Exit status 1
+8 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+8 verbose stack     at emitTwo (events.js:87:13)
+8 verbose stack     at EventEmitter.emit (events.js:172:7)
+8 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+8 verbose stack     at emitTwo (events.js:87:13)
+8 verbose stack     at ChildProcess.emit (events.js:172:7)
+8 verbose stack     at maybeClose (internal/child_process.js:818:16)
+8 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+9 verbose pkgid radical-client@0.0.3
+10 verbose cwd /Users/Tensor/radical-client
+11 error Darwin 15.4.0
+12 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+13 error node v4.2.4
+14 error npm  v2.14.12
+15 error code ELIFECYCLE
+16 error radical-client@0.0.3 prestart: `npm install`
+16 error Exit status 1
+17 error Failed at the radical-client@0.0.3 prestart script 'npm install'.
+17 error This is most likely a problem with the radical-client package,
+17 error not with npm itself.
+17 error Tell the author that this fails on your system:
+17 error     npm install
+17 error You can get their info via:
+17 error     npm owner ls radical-client
+17 error There is likely additional logging output above.
+18 verbose exit [ 1, true ]
