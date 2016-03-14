@@ -12,7 +12,7 @@ angular.module('offsite', [
   'api'
   // 'user'
 ], function ($httpProvider) {
-  FastClick.attach(document.body);
+  // FastClick.attach(document.body);
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
 
