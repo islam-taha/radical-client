@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('api', ['ngResource'])
-  .config(['$authProvider', function ($authProvider) {
+  .config([function () {
     // TODO: construct the url in a cleaner way
     console.log('laksjdflksadjf')
     window.backendUrl = "https://radical-server.herokuapp.com/"
@@ -29,7 +29,7 @@ angular.module('api', ['ngResource'])
       return resource;
     };
   }])
-  .factory('$api', ['Resource', '$auth', function ($resource, $auth) {
+  .factory('$api', ['Resource', function ($resource) {
     var apiService = {};
 
     apiService.apiUrl = window.backendUrl;
