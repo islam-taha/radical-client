@@ -9,7 +9,6 @@ angular.module('offsite', [
   'LocalStorageModule',
   'ngMaterial',
   'offsite.users',
-  'ngMdIcons',
   'api',
   'user'
 ], function ($httpProvider) {
