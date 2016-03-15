@@ -35,9 +35,9 @@ angular.module('api', ['ngResource'])
     apiService.apiUrl = window.backendUrl;
 
     apiService.endpoint = function (path) {
-      return  window.backendUrl + '/' + path;
+      return apiService.apiUrl + '/' + path;
     };
 
-    apiService.authAiesec = $resource(apiService.endpoint('auth/auth_expa/'))
+    apiService.authAiesec = $resource(apiService.endpoint('auth/auth_expa'))
     return apiService;
   }]);
