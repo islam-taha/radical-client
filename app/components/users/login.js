@@ -97,6 +97,9 @@ function DialogController($scope, $mdDialog, $state, $api) {
   $scope.load = 0;
 
   $scope.register = function() {
+		$scope.selected_programmes = []
+		var selected = $scope.program === $scope.programs[0] ? 1 : 2;
+		$scope.selected_programmes.push(selected)
     if ($scope.user.phone.length == 11 && $scope.user.phone.match('[0-9]')) {
       if ($scope.user.password === $scope.user.password_confirmation) {
         var userParams = {
