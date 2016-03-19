@@ -1,5 +1,6 @@
 .layout-transparent {
-  background: url('../images/offsite.jpg') center / cover;
+  background: url('../images/offsite.png') center / cover;
+  background-size: 1350px 700px;
 }
 
 [scroll] {

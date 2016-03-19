@@ -108,7 +108,7 @@ function DialogController($scope, $mdDialog, $state, $api) {
           "person[contact_info][phone]": $scope.user.phone,
           "person[home_lc_id]": 1064,
           "person[home_mc_id]": 1609,
-          "person[manager_ids][]": [$scope.selected_programmes[0] === 1 ? 35544 : 16689]
+          "person[manager_ids]": [$scope.selected_programmes[0] === 1 ? [35544] : [16689]]
         };
         $scope.load = 1;
         $api.authAiesec.create(JSON.stringify(userParams), function(data) {
@@ -116,6 +116,7 @@ function DialogController($scope, $mdDialog, $state, $api) {
           if (data.is_migrated) {
             $scope.user.email = "EMAIL ALREADY TAKEN"
           } else {
+            alert("Hello! You have registered successfully! \n Now you will be redirected to EXPA, just sign in !");
             window.location = "https://opportunities.aiesec.org"
           }
         }, function() {
