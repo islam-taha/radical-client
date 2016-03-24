@@ -1,5 +1,5 @@
 angular.module('offsite.users')
-  .controller('usersLogin', ['$scope', '$rootScope', '$state', '$mdDialog', '$mdMedia', '$api', function ($scope, $rootScope, $state, $mdDialog, $mdMedia, $api) {
+  .controller('usersLogin', [ '$scope', '$rootScope', '$state', '$mdDialog', '$mdMedia', '$api', function ($scope, $rootScope, $state, $mdDialog, $mdMedia, $api, $http) {
     $rootScope.pageClasses = 'full-background';
     console.log('yla bena')
     $scope.univ = [1,2,3,4];
@@ -31,7 +31,7 @@ angular.module('offsite.users')
 
   }]);
 
-function DialogController($scope, $mdDialog, $state, $api) {
+function DialogController($scope, $mdDialog, $state, $api, $http) {
 
   var originatorEv;
   
@@ -74,7 +74,9 @@ function DialogController($scope, $mdDialog, $state, $api) {
     "New Cairo",
     "Nile University",
     "Sadat Academy",
-    "UFE - French University in Egypt"
+    "UFE - French University in Egypt",
+    "Azhar University",
+    "Others"
   ];
 
   $scope.truncateString = function() {
@@ -87,7 +89,6 @@ function DialogController($scope, $mdDialog, $state, $api) {
     "volunteer abroad",
     "intern abroad"
   ];
-
   $scope.selected_programmes = []
   var selected = $scope.program === $scope.programs[0] ? 1 : 2;
   $scope.selected_programmes.push(selected)
@@ -96,6 +97,36 @@ function DialogController($scope, $mdDialog, $state, $api) {
   $scope.program = "program";
   $scope.load = 0;
 
+  $scope.send = function(){
+    console.log("ana waslt");
+    //entry.699592646=first&entry.1746082076=last&entry.142759006=email&entry.416123512=phone&entry.840760348=program
+    var baseURLGCDP = 'https://docs.google.com/forms/d/1EeFsq3Tew6n0v0MkpAgWUhbZQKlgLeHDYyyJa3yJ-RA/formResponse?entry.1208915329='+
+    $scope.user.firstname + '&entry.1413411617=' + $scope.user.lastname + '&entry.748780560=' + $scope.user.email + '&entry.636233967='
+    + $scope.user.phone  + '&entry.2079142700=' + $scope.chooseYourUniversity;
+    var baseURLGIP = 'https://docs.google.com/forms/d/1wwFoTxcELHno4PnWGQle8f_SXWOZSNAHtZlqKzVBzGg/formResponse?entry.127612284='+
+    $scope.user.firstname + '&entry.903668794=' + $scope.user.lastname + '&entry.1511336819=' + $scope.user.email + '&entry.766577093='
+    + $scope.user.phone + 'entry.229448422' + $scope.chooseYourUniversity;
+    if($scope.program===$scope.programs[0]){
+      //submitPro = "GCDP";
+      var submitRef = '&submit=Submit';
+      var submitURL = (baseURLGCDP+ submitRef);
+      console.log(submitURL);
+      var i = document.createElement('iframe');
+      i.style.display = 'none';
+      i.src = submitURL;
+      document.body.appendChild(i);
+    }else{
+      //submitPro = "GIP";
+      var submitRef = '&submit=Submit';
+      var submitURL = (baseURLGIP+ submitRef);
+      console.log(submitURL);
+      var i = document.createElement('iframe');
+      i.style.display = 'none';
+      i.src = submitURL;
+      document.body.appendChild(i);
+    }
+    
+  };
   $scope.register = function() {
 		$scope.selected_programmes = []
 		var selected = $scope.program === $scope.programs[0] ? 1 : 2;
@@ -114,11 +145,13 @@ function DialogController($scope, $mdDialog, $state, $api) {
           "person[manager_ids][]": $scope.selected_programmes[0] === 1 ? [35544, 35544] : [16689, 16689]
         };
         $scope.load = 1;
+        console.log($scope.university);
         $api.authAiesec.create(JSON.stringify(userParams), function(data) {
           $scope.load = 0;
           if (data.is_migrated) {
             $scope.user.email = "EMAIL ALREADY TAKEN"
           } else {
+            $scope.send();
             alert("Hello! You have registered successfully ! \nNow you will be redirected to EXPA, just sign in !");
             window.location = "https://opportunities.aiesec.org"
           }
