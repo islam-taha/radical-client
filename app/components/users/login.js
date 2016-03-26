@@ -97,6 +97,22 @@ function DialogController($scope, $mdDialog, $state, $api) {
   $scope.program = "program";
   $scope.load = 0;
 
+  $scope.showAlert = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#popupContainer')))
+        .clickOutsideToClose(true)
+        .title('This is an alert title')
+        .textContent('You can specify some description text in here.')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+  };
+
   $scope.send = function(){
     console.log("ana waslt");
     //entry.699592646=first&entry.1746082076=last&entry.142759006=email&entry.416123512=phone&entry.840760348=program
@@ -132,7 +148,7 @@ function DialogController($scope, $mdDialog, $state, $api) {
 		var selected = $scope.program === $scope.programs[0] ? 1 : 2;
 		$scope.selected_programmes.push(selected)
     if ($scope.user.phone.length == 11 && $scope.user.phone.match('[0-9]')) {
-      if ($scope.user.password === $scope.user.password_confirmation) {
+      if ($scope.user.password === $scope.user.password_confirmation && $scope.user.password.length >= 8) {
         var userParams = {
           "person[email]": $scope.user.email,
           "person[first_name]": $scope.user.firstname,
@@ -149,9 +165,11 @@ function DialogController($scope, $mdDialog, $state, $api) {
         $api.authAiesec.create(JSON.stringify(userParams), function(data) {
           $scope.load = 0;
           if (data.is_migrated) {
-            $scope.user.email = "EMAIL ALREADY TAKEN"
+            alert("EMAIL ALREADY TAKEN");
+            $scope.user.email = "EMAIL ALREADY TAKEN";
           } else {
             $scope.send();
+            window.reload
             alert("Hello! You have registered successfully ! \nNow you will be redirected to EXPA, just sign in !");
             window.location = "https://opportunities.aiesec.org"
           }
@@ -159,7 +177,10 @@ function DialogController($scope, $mdDialog, $state, $api) {
           $scope.load = 0;
         });
       } else {
+        //$scope.showAlert();
+        alert("You either mistyped the password confirmation or it was less than 8 characters !!");
         $scope.user.password_confirmation = "";
+        $scope.user.password = "";
       }
     } else {
       $scope.user.phone = "";
