@@ -105,7 +105,7 @@ function DialogController($scope, $mdDialog, $state, $api, $http) {
     + $scope.user.phone  + '&entry.2079142700=' + $scope.chooseYourUniversity;
     var baseURLGIP = 'https://docs.google.com/forms/d/1wwFoTxcELHno4PnWGQle8f_SXWOZSNAHtZlqKzVBzGg/formResponse?entry.127612284='+
     $scope.user.firstname + '&entry.903668794=' + $scope.user.lastname + '&entry.1511336819=' + $scope.user.email + '&entry.766577093='
-    + $scope.user.phone + 'entry.229448422' + $scope.chooseYourUniversity;
+    + $scope.user.phone + '&entry.229448422=' + $scope.chooseYourUniversity;
     if($scope.program===$scope.programs[0]){
       //submitPro = "GCDP";
       var submitRef = '&submit=Submit';
