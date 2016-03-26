@@ -1,5 +1,5 @@
 angular.module('offsite.users')
-  .controller('usersLogin', [ '$scope', '$rootScope', '$state', '$mdDialog', '$mdMedia', '$api', function ($scope, $rootScope, $state, $mdDialog, $mdMedia, $api, $http) {
+  .controller('usersLogin', [ '$scope', '$rootScope', '$state', '$mdDialog', '$mdMedia', '$api', function ($scope, $rootScope, $state, $mdDialog, $mdMedia, $api) {
     $rootScope.pageClasses = 'full-background';
     console.log('yla bena')
     $scope.univ = [1,2,3,4];
@@ -31,7 +31,7 @@ angular.module('offsite.users')
 
   }]);
 
-function DialogController($scope, $mdDialog, $state, $api, $http) {
+function DialogController($scope, $mdDialog, $state, $api) {
 
   var originatorEv;
   
